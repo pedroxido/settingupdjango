@@ -1,0 +1,16 @@
+{% if error_message %} <p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'todo:add' %}" method="post">
+{% csrf_token %}
+Descripción: <input type="text" name="description"></br>
+Valor: <input type="number" name="amount" min="0" step="any"></br>
+Fecha: <input type="date" name="pub_date"></br>
+
+La persona que debe: 
+<select name="user">
+	{% for user in main %}
+  <option value="{{ user.id }}">{{ user.username }}</option>
+	{% endfor %}
+</select></br>
+<input type="submit" value="Add" /></br>
+</form>

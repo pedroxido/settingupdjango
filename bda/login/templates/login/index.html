@@ -1,0 +1,40 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Login  - BdaBitchStahp</title>
+
+  <link rel="stylesheet" href="{% static 'login/css/reset.css' %}">
+
+  <link rel="stylesheet" href="{% static 'login/css/style.css' %}" media="screen" type="text/css" />
+
+</head>
+
+<body>
+
+<form action="{% url 'login:index' %}" method="post">
+{% csrf_token %}
+	<div class="wrap">
+		<div class="avatar">
+      <img src="http://cdn.ialireza.me/avatar.png">
+		</div>
+		<input type="text" name="username" placeholder="username" required>
+		<div class="bar">
+			<i></i>
+		</div>
+		<input type="password" name="password" placeholder="password" required>
+		<!--<a href="" class="forgot_link">forgot ?</a>-->
+		<button type="submit" value="login">Sign in</button>
+	</div>
+</form>
+  
+
+  <script src='http://codepen.io/assets/libs/fullpage/none.js'></script>
+
+</body>
+
+</html>
